@@ -1,7 +1,6 @@
 (function () {
 	var ready = function () {
 	/* Random Features */
-		FutureMod.initCompatibilityChecks();
 		FutureMod.addGameExtentions();
 	
 	/* Adds topics to the game */

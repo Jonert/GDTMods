@@ -1,55 +1,5 @@
 var FutureMod = {};
-(function () {
-	/* Compatibility check */
-	var compatibilityCheck = function(data){
-		for (var i = 0; i < ModSupport.availableMods.length; i++) {
-			var mod = ModSupport.availableMods[i];
-			if(mod.url == "https://github.com/Turntablelover/Game-Dev-Tycoon-Mod" && mod.active){
-				var div = $("body");
-				div.append('<div id="ErrorContainer" class="windowBorder smallWindow" style="overflow:auto;display:none;"> <div id="cheatmodtop" class="windowTitle smallerWindowTitle">Compatibility Problem</div>');
-				div = $("#ErrorContainer");
-				div.append('<div id="error" style="margin-left:50px;width: 400px;" >Expansion Pack Mod is <span style="color:red;">NOT</span> compatible with VENOMOUS mod.</br></br> To continue using Expansion Pack Mod Please disable VENOMOUS mod in the mods menu and restart your Game Dev Tycoon</div>');
-				div.append('<div id="mainmenubutton" class="selectorButton whiteButton" onclick="UI.toggleMainMenu()" style="display:inline-block;position: relative;margin-left:50px;width: 350px;" >Main Menu</div>');
-				div.gdDialog({popout: !0,close: 0})
-			}
-		}
-	};
-	
-	FutureMod.initCompatibilityChecks = function(){
-		if(GDT.compatibilityCheckActive == 'undefined' || GDT.compatibilityCheckActive == null){
-			GDT.on(GDT.eventKeys.saves.loading, compatibilityCheck);
-			GDT.on(GDT.eventKeys.saves.saving, compatibilityCheck);
-			GDT.compatibilityCheckActive = true;
-		}
-	};
-	/*  */
-	
-	/* Game Extensions */
-	var evKey = GDT.eventKeys.gameplay;
-	
-    FutureMod.addGameExtentions = function () {
-        var findMe = document.getElementById("gameLengthSelection");
-        var appendMe = document.createElement("option");		
-        appendMe.text = "60 Years (long)";
-        appendMe.value = "2";
-        findMe.appendChild(appendMe);
-		
-		appendMe = document.createElement("option");
-        appendMe.text = "90 Years (super long)";
-        appendMe.value = "3";
-        findMe.appendChild(appendMe);
-		
-		appendMe = document.createElement("option");
-        appendMe.text = "102 Years (really long)";
-        appendMe.value = "3.4";
-        findMe.appendChild(appendMe);
-		
-		appendMe = document.createElement("option");
-        appendMe.text = "168 Years (Old Person Long)";
-        appendMe.value = "5.6";
-        findMe.appendChild(appendMe);
-    };
-	
+(function () {	
 	/* Topics */
 	FutureMod.addTopic = function () {
 		GDT.addTopics([
@@ -102,7 +52,7 @@ var FutureMod = {};
 			});
 	};
 	FutureMod.addPlatformVosCall = function () {
-		var icon = './mods/FutureisticalTech/source/img/vintLogo.png'
+		var icon = './mods/FutureisticalTech/source/img/vintLogo.png';
 		GDT.addPlatform(
 			{
 				id: 'VosCall',
@@ -111,8 +61,8 @@ var FutureMod = {};
 				startAmount: 0.4,
 				unitsSold: 0.435,
 				licencePrize: 4000,
-				published: '6/3/2'
-				platformRetireDate: '8/3/2'
+				published: '6/3/2',
+				platformRetireDate: '8/3/2',
 				developmentCosts: 15000,
 				/* Action, Adventure, RPG, Simulation, Strategy, Casual */
 				genreWeightings: [1, 0.6, 0.8, 0.9, 1.0, 1.0],
