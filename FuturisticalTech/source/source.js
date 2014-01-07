@@ -40,7 +40,7 @@ var FutureMod = {};
 	};
 	
 	FutureMod.initUpdateChecks = function () {
-		if (GDT.updateCheckActive === 'undefined' || GDT.updateCheckActive !== null) {
+		if (GDT.updateCheckActive == 'undefined' || GDT.updateCheckActive == null) {
 			GDT.on(GDT.eventKeys.saves.loading, UpdateCheck);
 			GDT.on(GDT.eventKeys.saves.saving, UpdateCheck);
 			GDT.updateCheckActive = true;
