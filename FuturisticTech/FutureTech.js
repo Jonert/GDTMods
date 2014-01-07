@@ -1,7 +1,6 @@
 (function () {
 	var ready = function () {
 	/* Random Features */
-		FutureMod.addGameExtentions();
 	
 	/* Adds topics to the game */
 		FutureMod.addTopic();
@@ -25,6 +24,6 @@
 	'mods/gdt-modAPI/api/topics.js',
 	'mods/gdt-modAPI/api/research.js',
 	'mods/gdt-modAPI/examples/examples.js',
-	'mods/FuturisticalTech/source/source.js'
+	'mods/FuturisticTech/source/source.js'
 	], ready, error);
 })();
