@@ -12,7 +12,6 @@
 	};
 	
 	GDT.loadJs(['mods/gdt-modAPI/helpers/checks.js',
-	'mods/gdt-modAPI/api/persistence.js',
 	'mods/gdt-modAPI/api/events.js',
 	'mods/gdt-modAPI/api/platforms.js',
 	'mods/gdt-modAPI/api/topics.js',
