@@ -16,6 +16,23 @@ var FutureMod = {};
 	};
 	/*  */
 	
+	/* Game Extensions */
+	var evKey = GDT.eventKeys.gameplay;
+	
+	FutureMod.addGameExtentions = function () {
+		var findMe = document.getElementById("gameLengthSelection");
+		var appendMe = document.CreateElement("option");
+		appendMe.text = "60 Years (long)";
+		appendMe.value = "2";
+		findMe.appendChild(appendMe);
+		
+		appendMe = document.createElement("option");
+        appendMe.text = "84 Years (super long)";
+        appendMe.value = "2.8";
+        findMe.appendChild(appendMe);
+		
+	};
+	
 	/* Topics (Future Plans) */
 	FutureMod.addTopic = function () {
 		GDT.addTopics([
@@ -59,7 +76,7 @@ var FutureMod = {};
 						getNotification: function (company) {
 							return new Notification({
 								header: "Industry News".localize(),
-								text: "Today, Merizon Mobile a new hardware manufacturer has announced a brand new phone called the Void One. The Void One comes with a new advanced operating system called Void OS. Even though the new platform is a bit expensive, you get value for your money. Merizon Mobile said that the Void One will become available {0}".localize().format(General.getETADescription('4/12/2', '5/1/3')),
+								text: "Today, Merizon Mobile a new hardware manufacturer has announced a brand new phone called the Void One. The Void One comes with a new advanced operating system called Void OS. Even though the new platform is a bit expensive, you get value for your money. Merizon Mobile said that the Void One will become available {0}".localize().format(General.getETADescription('4/12/3', '5/1/3')),
 								image: icon
 							});
 						}
@@ -115,5 +132,4 @@ var FutureMod = {};
 	/*  */
 	
 	/*  */
-	
 }) ();

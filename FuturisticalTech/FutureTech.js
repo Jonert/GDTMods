@@ -2,7 +2,11 @@
 	var ready = function () {
 	/* Random Features */
 		FutureMod.initCompatibilityChecks();
+		FutureMod.addGameExtentions();
 	
+	/* Adds topics to the game */
+		FutureMod.addTopic();
+		
 	/* Adds platforms to the game */
 		FutureMod.addPlatformVoidOne();
 		
