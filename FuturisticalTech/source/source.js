@@ -166,12 +166,12 @@ var FutureMod = {};
 			{
 				id: "4D Engine",
 				name: "4D Engine".localized(),
-				v: 12
+				v: 12,
 				canResearch: function(company) {
 					return false;
 				},
 				category: "Engine",
-				categoryDispayName: "Engine".localize();
+				categoryDispayName: "Engine".localize(),
 				consolePart: true,
 				techLevel: 7,
 				showXPGain: true
