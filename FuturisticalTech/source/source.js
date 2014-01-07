@@ -18,13 +18,13 @@ var FutureMod = {};
 	
 	/* Topics (Future Plans) */
 	FutureMod.addTopic = function () {
-		GDT.addTopics({
+		GDT.addTopics([
 		{
-			id: "Teleportation",
-			name: "Teleporting".localize("game topic"),
-			genreWeightings: [0.8, 1, 0.6, 0.9, 0.7, 0.6]
-			audienceWeightings: [1, 0.8, 0.6]
-		}]);
+		    id: "Alternate World",
+		    name: "Alternate World".localize("game topic"),
+		    genreWeightings: [0.7, 1, 0.9, 1, 0.8, 0.8],
+			audienceWeightings: [0.7, 0.9, 1]
+		}]);,
 	};
 	/*  */
 	
@@ -71,8 +71,7 @@ var FutureMod = {};
 	/*  */
 	
 	/* Events (Future Plans)*/
-	FutureMod.addEventSmelly = function () {
-		var eventId = "
+	
 	/*  */
 	
 	/* Researches */
