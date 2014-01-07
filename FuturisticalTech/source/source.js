@@ -32,7 +32,7 @@ var FutureMod = {};
 	
 	/* Void */
 	FutureMod.addPlatformVoidOne = function () {
-		var icon = './mods/PhoneMod/source/img/VoidOne.png';
+		var icon = './mods/FuturisticalTech/source/img/VoidOne.png';
 		GDT.addPlatform(
 			{
 				id: 'VoidOne',
@@ -55,7 +55,7 @@ var FutureMod = {};
 				events: [
 					{
 						id: '21555884-0000-0000-0001-SLASHER',
-						date: '1/5/1',
+						date: '4/12/3',
 						getNotification: function (company) {
 							return new Notification({
 								header: "Industry News".localize(),
