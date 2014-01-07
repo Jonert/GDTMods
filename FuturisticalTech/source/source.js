@@ -16,7 +16,7 @@ var FutureMod = {};
 	};
 	
 	FutureMod.initCompatibilityChecks = function(){
-		if(GDT.compatibilityCheckActive === 'undefined' || GDT.compatibilityCheckActive !== null){
+		if(GDT.compatibilityCheckActive == 'undefined' || GDT.compatibilityCheckActive == null){
 			GDT.on(GDT.eventKeys.saves.loading, compatibilityCheck);
 			GDT.on(GDT.eventKeys.saves.saving, compatibilityCheck);
 			GDT.compatibilityCheckActive = true;
