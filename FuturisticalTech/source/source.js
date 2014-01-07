@@ -66,7 +66,7 @@ var FutureMod = {};
 	
 	/* Void */
 	FutureMod.addPlatformVoidOne = function () {
-		var icon = './mods/FuturisticalTech/source/img/VoidOne.png';
+		var icon = './mods/FuturisticalTech/source/img/merizon.png';
 		GDT.addPlatform(
 			{
 				id: 'VoidOne',
@@ -102,7 +102,7 @@ var FutureMod = {};
 			});
 	};
 	FutureMod.addPlatformVosCall = function () {
-		var icon = './mods/FutureisticalTech/source/img/VosCall.png'
+		var icon = './mods/FutureisticalTech/source/img/vintLogo.png'
 		GDT.addPlatform(
 			{
 				id: 'VosCall',

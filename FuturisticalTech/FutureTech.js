@@ -9,6 +9,7 @@
 		
 	/* Adds platforms to the game */
 		FutureMod.addPlatformVoidOne();
+		FutureMod.addPlatformVosCall();
 		
 	/* Adds researches to the game */
 		FutureMod.addResearch();
