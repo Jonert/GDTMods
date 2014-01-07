@@ -1,7 +1,10 @@
 (function () {
 	var ready = function () {
+	/* Random Features */
+		FutureMod.initCompatibilityChecks();
+	
 	/* Adds platforms to the game */
-		FutureMod.addPlatformVoid1();
+		FutureMod.addPlatformVoidOne();
 		
 	/* Adds researches to the game */
 		FutureMod.addResearch();

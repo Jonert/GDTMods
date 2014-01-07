@@ -7,6 +7,6 @@
 	"url" : "",
 	"main" : "./FutureTech.js",
 	"dependencies" : {
-		"gdt-modAPI":"0.1.1"
+		"gdt-modAPI":"0.1.x"
 	}
 }

@@ -8,7 +8,7 @@ var FutureMod = {};
 	};
 	
 	FutureMod.initCompatibilityChecks = function(){
-		if(GDT.compatibilityCheckActive == 'undefined' || GDT.compatibilityCheckActive == null){
+		if(GDT.compatibilityCheckActive === 'undefined' || GDT.compatibilityCheckActive !== null){
 			GDT.on(GDT.eventKeys.saves.loading, compatibilityCheck);
 			GDT.on(GDT.eventKeys.saves.saving, compatibilityCheck);
 			GDT.compatibilityCheckActive = true;
@@ -24,7 +24,7 @@ var FutureMod = {};
 		    name: "Alternate World".localize("game topic"),
 		    genreWeightings: [0.7, 1, 0.9, 1, 0.8, 0.8],
 			audienceWeightings: [0.7, 0.9, 1]
-		}]);,
+		}]);
 	};
 	/*  */
 	
@@ -35,9 +35,9 @@ var FutureMod = {};
 		var icon = './mods/PhoneMod/source/img/VoidOne.png';
 		GDT.addPlatform(
 			{
-				id: 'VoidOne'
-				name: 'Void One'
-				company: 'Merizon Mobile'
+				id: 'VoidOne',
+				name: 'Void One',
+				company: 'Merizon Mobile',
 				startAmount: 0.351,
 				unitsSold: 0.534,
 				/* y/m/w */
