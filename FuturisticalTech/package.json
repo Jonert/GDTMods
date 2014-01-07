@@ -1,10 +1,10 @@
 {
 	"id" : "futureTechMod",
 	"name" : "Futuristical Tech",
-	"version" : "0.1.1",
+	"version" : "0.1.0",
 	"author" : "SlasherCrasher1 (Founder & Leader)",
 	"description" : "Live & Fear the Technology, as it shall breath and thrive!",
-	"url" : "",
+	"url" : "https://github.com/SlasherCrasher1/GDTMods",
 	"main" : "./FutureTech.js",
 	"dependencies" : {
 		"gdt-modAPI":"0.1.x"

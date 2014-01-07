@@ -24,29 +24,6 @@ var FutureMod = {};
 	};
 	/*  */
 	
-	/* Update Checker */
-	var UpdateCheck = function (data) {
-		for (var i = 0; i < ModSupport.availableMods.length; i++) {
-			var mod = ModSupport.availableMods[i];
-			if(mod.url == "https://github.com/SlasherCrasher1/GDTMods" && mod.version > "0.1.0" && mod.active) {
-				var div = $("body");
-				div.append('<div id="UpdateContainer" class="windowBorder smallWindow" style="overflow:auto;display:none;"> <div id="cheatmodtop" class="windowTitle smallerWindowTitle">Update Is Now Available!</div>');
-				div = $("#UpdateContainer");
-				div.append('<div id="update" style="margin-left:50px;width: 400px;" >A new update <span style="color:red;">for</span> Game Dev Tycoon: Platforms, Events, and Topics OH MY is now available.</br></br> Please update to 1.7.3 at https://github.com/Turntablelover/Game-Dev-Tycoon-Mod </div>');
-				div.append('<div id="mainmenubutton" class="selectorButton whiteButton" onclick="UI.toggleMainMenu()" style="display:inline-block;position: relative;margin-left:50px;width: 350px;" >Main Menu</div>');
-				div.gdDialog({popout: !0,close: 0})
-			}
-		}
-	};
-	
-	FutureMod.initUpdateChecks = function () {
-		if (GDT.updateCheckActive == 'undefined' || GDT.updateCheckActive == null) {
-			GDT.on(GDT.eventKeys.saves.loading, UpdateCheck);
-			GDT.on(GDT.eventKeys.saves.saving, UpdateCheck);
-			GDT.updateCheckActive = true;
-		}
-	};
-	
 	/* Game Extensions */
 	var evKey = GDT.eventKeys.gameplay;
 	
