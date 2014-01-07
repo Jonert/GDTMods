@@ -50,14 +50,14 @@ var FutureMod = {};
         findMe.appendChild(appendMe);
     };
 	
-	/* Topics (Future Plans) */
+	/* Topics */
 	FutureMod.addTopic = function () {
 		GDT.addTopics([
 		{
-		    id: "Alternate World",
-		    name: "Alternate World".localize("game topic"),
-		    genreWeightings: [0.7, 1, 0.9, 1, 0.8, 0.8],
-			audienceWeightings: [0.7, 0.9, 1]
+		    id: "Teleporting",
+		    name: "Teleporter".localize("game topic"),
+		    genreWeightings: [0.8, 0.7, 0.9, 1, 0.7, 0.7],
+			audienceWeightings: [0.8, 0.8, 0.7]
 		}]);
 	};
 	/*  */
@@ -78,7 +78,7 @@ var FutureMod = {};
 				marketKeyPoints: [{date: "5/2/2",amount: 0.215}, {date: "6/4/3",amount: 0.478}, {date: "7/1/4",amount: 0.738}],
 				licencePrize: 2500,
 				published: '5/1/3',
-				platformRetireDate: '10/1/3',
+				platformRetireDate: '7/1/3',
 				developmentCosts: 15000,
 				/* Action, Adventure, RPG, Simulation, Strategy, Casual */
 				genreWeightings: [1, 0.6, 0.8, 0.9, 1.0, 1.0],
@@ -101,6 +101,41 @@ var FutureMod = {};
 				]
 			});
 	};
+	FutureMod.addPlatformVosCall = function () {
+		var icon = './mods/FutureisticalTech/source/img/VosCall.png'
+		GDT.addPlatform(
+			{
+				id: 'VosCall',
+				name: 'Vos Call',
+				company: 'Vint',
+				startAmount: 0.4,
+				unitsSold: 0.435,
+				licencePrize: 4000,
+				published: '6/3/2'
+				platformRetireDate: '8/3/2'
+				developmentCosts: 15000,
+				/* Action, Adventure, RPG, Simulation, Strategy, Casual */
+				genreWeightings: [1, 0.6, 0.8, 0.9, 1.0, 1.0],
+				/* Young, Everyone, Mature */
+				audienceWeightings: [0.8, 0.9, 0.6],
+				techLevel: 1,
+				iconUri: icon,
+				events: [
+					{
+						id: '21555884-0000-0000-0002-SLASHER',
+						date: '6/2/2',
+						getNotification: function (company) {
+							return new Notification({
+								header: "Industry News".localize(),
+								text: "Today, Vint a new hardware manufacturer has announced they are going to be competing against Merizon. They say they will lead the world to innovative ideas and discoveries, with their new Vos Call Phone! It's has all the latest technological advancement capabilities.".localize().format(General.getETADescription('6/2/2', '6/3/2')),
+								image: icon
+							});
+						}
+					}
+				]
+			}
+			);
+		};
 	
 	/*  */
 	
@@ -127,7 +162,20 @@ var FutureMod = {};
 		/*  */
 		
 		/* Engine items */
-		
+			GDT.addResearchItem(
+			{
+				id: "4D Engine",
+				name: "4D Engine".localized(),
+				v: 12
+				canResearch: function(company) {
+					return false;
+				},
+				category: "Engine",
+				categoryDispayName: "Engine".localize();
+				consolePart: true,
+				techLevel: 7,
+				showXPGain: true
+			});
 		/*  */
 		
 		/* Story/Quests */
@@ -146,6 +194,10 @@ var FutureMod = {};
 		
 		/*  */
 	};
+	/*  */
+	
+	/* Lab Research */
+	
 	/*  */
 	
 	/*  */
