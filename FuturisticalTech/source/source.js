@@ -54,7 +54,7 @@ var FutureMod = {};
 				iconUri: icon,
 				events: [
 					{
-						id: '12111996-0000-0000-0000-DZJENGISKHAN',
+						id: '21555884-0000-0000-0001-SLASHER',
 						date: '1/5/1',
 						getNotification: function (company) {
 							return new Notification({
