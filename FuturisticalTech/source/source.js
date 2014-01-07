@@ -4,6 +4,14 @@ var FutureMod = {};
 	var compatibilityCheck = function(data){
 		for (var i = 0; i < ModSupport.availableMods.length; i++) {
 			var mod = ModSupport.availableMods[i];
+			if(mod.url == "https://github.com/Turntablelover/Game-Dev-Tycoon-Mod" && mod.active){
+				var div = $("body");
+				div.append('<div id="ErrorContainer" class="windowBorder smallWindow" style="overflow:auto;display:none;"> <div id="cheatmodtop" class="windowTitle smallerWindowTitle">Compatibility Problem</div>');
+				div = $("#ErrorContainer");
+				div.append('<div id="error" style="margin-left:50px;width: 400px;" >Expansion Pack Mod is <span style="color:red;">NOT</span> compatible with VENOMOUS mod.</br></br> To continue using Expansion Pack Mod Please disable VENOMOUS mod in the mods menu and restart your Game Dev Tycoon</div>');
+				div.append('<div id="mainmenubutton" class="selectorButton whiteButton" onclick="UI.toggleMainMenu()" style="display:inline-block;position: relative;margin-left:50px;width: 350px;" >Main Menu</div>');
+				div.gdDialog({popout: !0,close: 0})
+			}
 		}
 	};
 	
@@ -16,22 +24,54 @@ var FutureMod = {};
 	};
 	/*  */
 	
+	/* Update Checker */
+	var UpdateCheck = function (data) {
+		for (var i = 0; i < ModSupport.availableMods.length; i++) {
+			var mod = ModSupport.availableMods[i];
+			if(mod.url == "https://github.com/SlasherCrasher1/GDTMods" && mod.version > "0.1.0" && mod.active) {
+				var div = $("body");
+				div.append('<div id="UpdateContainer" class="windowBorder smallWindow" style="overflow:auto;display:none;"> <div id="cheatmodtop" class="windowTitle smallerWindowTitle">Update Is Now Available!</div>');
+				div = $("#UpdateContainer");
+				div.append('<div id="update" style="margin-left:50px;width: 400px;" >A new update <span style="color:red;">for</span> Game Dev Tycoon: Platforms, Events, and Topics OH MY is now available.</br></br> Please update to 1.7.3 at https://github.com/Turntablelover/Game-Dev-Tycoon-Mod </div>');
+				div.append('<div id="mainmenubutton" class="selectorButton whiteButton" onclick="UI.toggleMainMenu()" style="display:inline-block;position: relative;margin-left:50px;width: 350px;" >Main Menu</div>');
+				div.gdDialog({popout: !0,close: 0})
+			}
+		}
+	};
+	
+	FutureMod.initUpdateChecks = function () {
+		if (GDT.updateCheckActive === 'undefined' || GDT.updateCheckActive !== null) {
+			GDT.on(GDT.eventKeys.saves.loading, UpdateCheck);
+			GDT.on(GDT.eventKeys.saves.saving, UpdateCheck);
+			GDT.updateCheckActive = true;
+		}
+	};
+	
 	/* Game Extensions */
 	var evKey = GDT.eventKeys.gameplay;
 	
-	FutureMod.addGameExtentions = function () {
-		var findMe = document.getElementById("gameLengthSelection");
-		var appendMe = document.CreateElement("option");
-		appendMe.text = "60 Years (long)";
-		appendMe.value = "2";
-		findMe.appendChild(appendMe);
-		
-		appendMe = document.createElement("option");
-        appendMe.text = "84 Years (super long)";
-        appendMe.value = "2.8";
+    FutureMod.addGameExtentions = function () {
+        var findMe = document.getElementById("gameLengthSelection");
+        var appendMe = document.createElement("option");		
+        appendMe.text = "60 Years (long)";
+        appendMe.value = "2";
         findMe.appendChild(appendMe);
 		
-	};
+		appendMe = document.createElement("option");
+        appendMe.text = "90 Years (super long)";
+        appendMe.value = "3";
+        findMe.appendChild(appendMe);
+		
+		appendMe = document.createElement("option");
+        appendMe.text = "102 Years (really long)";
+        appendMe.value = "3.4";
+        findMe.appendChild(appendMe);
+		
+		appendMe = document.createElement("option");
+        appendMe.text = "168 Years (Old Person Long)";
+        appendMe.value = "5.6";
+        findMe.appendChild(appendMe);
+    };
 	
 	/* Topics (Future Plans) */
 	FutureMod.addTopic = function () {

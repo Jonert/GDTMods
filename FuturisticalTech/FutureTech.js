@@ -3,6 +3,7 @@
 	/* Random Features */
 		FutureMod.initCompatibilityChecks();
 		FutureMod.addGameExtentions();
+		FutureMod.initUpdateChecks();
 	
 	/* Adds topics to the game */
 		FutureMod.addTopic();
