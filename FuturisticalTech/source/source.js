@@ -1,5 +1,37 @@
 var FutureMod = {};
 (function () {	
+	/* Game Extensions */
+	// Thanks to http://www.w3schools.com/jsref/dom_obj_document.asp && http://www.w3schools.com/jsref/dom_obj_all.asp for a nice documentation on Props. & Methods.
+		
+	var eK_GP = GDT.eventKeys.gameplay
+	
+	FutureMod.addGameExtentions() {
+		var gameLength = document.getElementById("gameLengthSelection");
+		var gameOriginal30 = document.gameLength.childNodes.item(0);
+		var gameOriginal35 = document.gameLength.childNodes.item(1);
+		var gameOriginal42 = document.gameLength.childNodes.item(2);
+		
+		var gameExtend15 = document.createElement("option");
+		gameExtend15.text = "15 Years (HyperSpeed)";
+		gameExtend15.value = "0.5";
+		gameLength.appendChild(gameExtend15);
+		
+		var gameExtend30 = document.createElement("option");
+		gameExtend30.text = "30 Years (Extreme Fast-Paced)";
+		gameExtend30.value = "1";
+		gameLength.replaceChild(gameExtend30, gameOriginal30);
+		
+		var gameExtend45 = document.createElement("option");
+		gameExtend45.text = "45 Years (Fast-Paced)"
+		gameExtend45.value = "1.5"
+		gameLength.replaceChild(gameExtend45, gameOriginal35);
+		
+		var gameExtend60 = document.createElement("option");
+		gameExtend60.text = "60 Years (Recommended)"
+		gameExtend60.value = "2";
+		gameLength.replaceChild(gameExtend60, gameOriginal42);
+	}
+	
 	/* Topics */
 	FutureMod.addTopic = function () {
 		GDT.addTopics([
@@ -118,13 +150,10 @@ var FutureMod = {};
 				name: "4D Engine".localized(),
 				v: 12,
 				canResearch: function(company) {
-					return false;
+					return LevelCalculator.getMissionLevel('3D Engine')> 2;
 				},
 				category: "Engine",
 				categoryDispayName: "Engine".localize(),
-				consolePart: true,
-				techLevel: 7,
-				showXPGain: true
 			});
 		/*  */
 		
