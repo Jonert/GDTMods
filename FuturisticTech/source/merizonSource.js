@@ -91,6 +91,7 @@ var FutureMod = {};
 			});
 	}
 	
+	/*
 	FutureMod.addMerizonResearch = function () {
 		GDT.addResearchItem(
 		{
@@ -100,4 +101,5 @@ var FutureMod = {};
 			canResearch: function (company) {
 				return
 	}
+	*/
 }
