@@ -8,7 +8,7 @@ var FutureMod = {};
 
 	
 	/* Platforms */
-	FutureMod.addPlatforms = function () {
+	FutureMod.addMerizonPlatforms = function () {
 		var icon = './mods/FuturisticalTech/source/img/merizon.png';
 		GDT.addPlatform(
 			{
@@ -83,13 +83,21 @@ var FutureMod = {};
 							return new Notification({
 								header: "Industry News".localize(),
 								text: "Today, Merizon Mobile is inovating technology once again! Yes, they've made a server to apply updates to their phones. So, no more visits to the store to update your phone. {0}".localize(),
-								if (voidOSupdates === false)
-									voidOSupdates = true
-								return,
+								voidOSupdates = true
 							});
 						}
 					}
 				]
 			});
+	}
+	
+	FutureMod.addMerizonResearch = function () {
+		GDT.addResearchItem(
+		{
+			id: "VoidCompat",
+			name: "VoidOS Compatibility".localize(),
+			v: 1,
+			canResearch: function (company) {
+				return
 	}
 }

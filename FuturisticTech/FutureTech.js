@@ -6,7 +6,7 @@
 		FutureMod.addTopic();
 		
 	/* Adds platforms to the game */
-		FutureMod.addPlatformVoidOne();
+		FutureMod.addMerizonPlatforms();
 		FutureMod.addPlatformVosCall();
 		
 	/* Adds researches to the game */
