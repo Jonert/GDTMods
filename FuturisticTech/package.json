@@ -3,7 +3,7 @@
 	"name" : "Futuristical Tech",
 	"version" : "0.1.1",
 	"author" : "SlasherCrasher1 (Founder & Leader)",
-	"description" : "Live & Fear the Technology, as it shall breath and thrive!",
+	"description" : "Live & Fear the Technology, as it shall breath and thrive! Thanks to @Kristof1104 for his compatibility checker!",
 	"url" : "https://github.com/SlasherCrasher1/GDTMods",
 	"main" : "./FutureTech.js",
 	"dependencies" : {

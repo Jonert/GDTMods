@@ -24,7 +24,6 @@
 	'mods/gdt-modAPI/api/topics.js',
 	'mods/gdt-modAPI/api/research.js',
 	'mods/gdt-modAPI/examples/examples.js',
-	'mods/FuturisticTech/source/source.js',
-	'mods/FuturisticTech/source/merizonSource.js'
+	'mods/FuturisticTech/source/source.js'
 	], ready, error);
 })();
