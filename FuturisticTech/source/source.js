@@ -2,23 +2,23 @@ var FutureMod = {};
 (function () {
 	// Thanks to http://www.w3schools.com/jsref/dom_obj_document.asp && http://www.w3schools.com/jsref/dom_obj_all.asp for a nice documentation on Props. & Methods.
 	
-	var ExpansionAddon = false
+	var ExpansionAddon = false;
 	
 	/* Addon Checker */
-	var addonCheck = function(data){
+	var compatibilityCheck = function(data){
 		for (var i = 0; i < ModSupport.availableMods.length; i++) {
 			var mod = ModSupport.availableMods[i];
 			if(mod.url == "https://github.com/DzjengisKhan/GDT-Expansion-Pack" && mod.active){
-				ExpansionAddon = true
+				ExpansionAddon = true;
 			}
 		}
 	};
 
-	FutureMod.initAddonCheck = function(){
-		if(GDT.addonCheckActive == 'undefined' || GDT.addonCheckActive == null){
-			GDT.on(GDT.eventKeys.saves.loading, addonCheck);
-			GDT.on(GDT.eventKeys.saves.saving, addonCheck);
-			GDT.addonCheckActive = true;
+	FutureMod.initCompatibilityChecks = function(){
+		if(GDT.compatibilityCheckActive == 'undefined' || GDT.compatibilityCheckActive == null){
+			GDT.on(GDT.eventKeys.saves.loading, compatibilityCheck);
+			GDT.on(GDT.eventKeys.saves.saving, compatibilityCheck);
+			GDT.compatibilityCheckActive = true;
 		}
 	};
 	
@@ -40,7 +40,7 @@ var FutureMod = {};
 	var voidOSupdates = false;
 	
 	FutureMod.addMerizonPlatforms = function () {
-		var icon = './mods/FuturisticalTech/source/img/merizon.png';
+		var icon = './mods/FuturisticTech/source/img/merizon.png';
 		GDT.addPlatform(
 			{
 				id: 'VoidOne',
@@ -114,9 +114,9 @@ var FutureMod = {};
 							return new Notification({
 								header: "Industry News".localize(),
 								text: "Today, Merizon Mobile is inovating technology once again! Yes, they've made a server to apply updates to their phones. So, no more visits to the store to update your phone. {0}".localize(),
-								image: icon,
+								image: icon
 							});
-						voidOSupdates = true
+						voidOSupdates = true;
 						}
 					}
 				]
@@ -126,7 +126,7 @@ var FutureMod = {};
 	
 	/* Vos */
 	FutureMod.addPlatformVosCall = function () {
-		var icon = './mods/FutureisticalTech/source/img/vintLogo.png';
+		var icon = './mods/FuturisticTech/source/img/vintLogo.png';
 		GDT.addPlatform(
 			{
 				id: 'VosCall',
@@ -186,7 +186,17 @@ var FutureMod = {};
 		/*  */
 		
 		/* Engine items */
-		
+		GDT.addResearchItem(
+		{
+			id: "VoidCompat",
+			name: "Void Compatibility".localize(),
+			v: 2,
+			canResearch: function (company) {
+				return LevelCalculator.getMissionLevel('Engine') > 3 && (voidOSupdates == true);
+			},
+			category: "Engine",
+			categoryDisplayName: "Engine".localize()
+		});
 		/*  */
 		
 		/* Story/Quests */
